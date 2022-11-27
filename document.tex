@@ -1,0 +1,128 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{indentfirst} 
+\usepackage[colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
+\fontsize{142pt}{22}
+\usepackage[top=0.7cm, bottom=1.5cm, left = 2.5cm, right=2cm]{geometry}
+\begin{document}
+	\fontsize{13pt}{20}\selectfont
+     \textbf{\begin{center}
+     		Chapter 3: A One Way, Stackles Quicksort Algorithm \\
+     		PHÂN TÍCH CHI TIẾT ĐỒ ÁN CUỐI KỲ\\
+     		Học kỳ I - Năm học: 2022-2023\\
+     		------oOo------\\
+     		Thành viên nhóm
+     \end{center}}
+ \noindent\textbullet \hspace{0.5cm} 21110365 - \textbf{Thái Bảo An}\\
+  \textbullet \hspace{0.5cm} 21110445 - \textbf{Phan Hiếu Thuận}\\
+  \textbullet \hspace{0.5cm} 21110728 - \textbf{Nguyễn Dương Thế Vĩ}\\
+\textbf{  1. NỘI DUNG KHI ĐỌC LƯỚT QUA BÀI BÁO}\\
+\indent Bài báo trình bày một thuật toán sắp xếp các số dương tương tự thuật toán sắp xếp đã có trước đó \textit{(Hoare’s Quicksort)}, nhưng thuật toán mang tính đơn hướng và không dùng đệ quy nên nó được tối ưu hơn, giúp chương trình hoạt động nhanh hơn và ngắn hơn. Thuật toán sắp xếp đó được gọi là “Thuật toán sắp xếp 1 chiều không chồng chéo”\textit{(Stackles Quickssort Algorithm)}.\\\\
+\textbf{2. GẠCH CHÂN CÁC TỪ MỚI}\\
+\textbullet \hspace{0.5cm} Link bài báo đã được gạch chân: \href{https://drive.google.com/file/d/1FNytjq7UPgFoY3wbIjKOiO3dOQviyISe/view?usp=sharing}{\textbf{LINK}}\\\\
+\textbf{3. GIẢI THÍCH TỪ THEO TỪ ĐIỂN ANH-ANH}\\
+ \noindent\textbullet \hspace{0.5cm}Unidirectional:\textit{ having, moving in, or operating in only one direction}\\
+\textbullet \hspace{0.5cm}Recursion:  \textit{The process of repeating a funtion each time applying it to the result of the previous stage}\\
+\textbullet \hspace{0.5cm}Povit: \textit{Element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot}\\
+\textbullet \hspace{0.5cm}Destination:\textit{ the place where someone is going or where something is being sent or taken}\\
+\textbullet \hspace{0.5cm}Burn The Candle At Both Ends:\textit{ Trying to do two or more large projects at the same time.}\\
+\textbullet \hspace{0.5cm}Pointer: \textit{A variable whose value is the address of another variable, i.e.,}\\
+\textbullet \hspace{0.5cm}Classical:\textit{ Traditional in style or form, or based on methods developed over a long period of time, and considered to be of lasting value}.\\
+\textbullet \hspace{0.5cm}Invariant: \textit{not changing}\\
+\textbullet \hspace{0.5cm}Permutation: \textit{Any of the different ways in which a set of things can be ordered}\\
+\textbullet \hspace{0.5cm}Vacan: \textit{Empty.}\\
+\textbullet \hspace{0.5cm}Scheme :\textit{A plan or system for doing or organizing something}\\
+\textbullet \hspace{0.5cm}Sentinel: \textit{A soldier whose job is to guard something}\\
+\textbullet \hspace{0.5cm}Hypothetical: \textit{Imagined or suggested but not necessarily real or true}\\
+
+
+
+
+\newpage
+ \noindent\textbf{4. GIẢI THÍCH TỪ THEO TỪ ĐIỂN ANH-VIỆT}\\
+  \noindent\textbullet \hspace{0.5cm}Unidirectional:\textit{ Hướng duy nhất.}\\
+  \textbullet \hspace{0.5cm}Recursion:\textit{ Đệ quy là phương pháp dùng hàm để gọi lại chính nó để tiếp tục giải dực trên dữ liệu đã khai báo trước đó.}\\
+   \textbullet \hspace{0.5cm}Povit:\textit{ "Phần tử chốt" là phần chia mảng thành hai mảng con, khi sắp xếp các phần tử của hai mảng con sẽ lần lượt so sánh với "phần tử chôt", ta se thi được một mảng gồm những phần tử nhỏ hơn hoặc bằng phần tử chốt và một mảng gồm những phần tử lớn hơn phần tử chốt. }\\
+   \textbullet \hspace{0.5cm}Destination: \textit{Nơi đến}\\
+   \textbullet \hspace{0.5cm}Burn The Candle At Both Ends:\textit{ Làm việc gì đó quá sức, vắt kịệt sức mình.}\\
+ \textbullet \hspace{0.5cm}Pointer: \textit{Con trỏ.}\\
+\textbullet \hspace{0.5cm}Classical:\textit{ Kinh điển, cổ điển}.\\
+ \textbullet \hspace{0.5cm}Invariant: \textit{Không thay đổi.}\\
+ \textbullet \hspace{0.5cm}Permutation: \textit{Hoán vị.}\\
+ \textbullet \hspace{0.5cm}Scheme :\textit{Hệ thống tổ chức}\\
+ \textbullet \hspace{0.5cm}Sentinel: \textit{Lính canh (giám sát).}\\
+ \textbullet \hspace{0.5cm}Hypothetical: \textit{Giả thuyết.}\\
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ \noindent\textbf{5. LINK VIDEO, WEBSITE GIẢI THÍCH CHO CÁC KHÁI NIỆM: }
+\noindent+\textbf{Stack:} \textit{is a linear data structure that follows the principle of Last In First Out (LIFO). This means the last element inserted inside the stack is removed first.}\\
+ \indent \textbullet\hspace{0.3cm} Link1: \url{https://www.programiz.com/dsa/stack}\\
+\indent \textbullet\hspace{0.3cm} Link2: \url{https://www.geeksforgeeks.org/introduction-to-stack-data-structure-and-algorithm-tutorials/}\\
+ \noindent+\textbf{Quicksort:}\textit{ is a Divide and Conquer algorithm. It picks an element as a pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways. }\\
+ \indent \textbullet\hspace{0.3cm} Link1: \url{https://www.geeksforgeeks.org/quick-sort/}\\
+  \indent \textbullet\hspace{0.3cm} Link2: \url{https://en.wikipedia.org/wiki/Quicksort}
+  
+   \noindent+\textbf{Hoare’s Quicksort :}\textit{ works by initializing two indexes that start at two ends, the two indexes move toward each other until an inversion is (A smaller value on the left side and greater value on the right side) found. When an inversion is found, two values are swapped and the process is repeated. }\\
+    \indent \textbullet\hspace{0.3cm} Link1: {\href{https://www.geeksforgeeks.org/hoares-vs-lomuto-partition-scheme-quicksort/}{\textbf{Geeksforgeeks}}\\
+       \indent \textbullet\hspace{0.3cm} Link2: \url{https://www.youtube.com/watch?v=NuQYFXmLUrM}\\
+        \noindent+\textbf{Kirchoff's law :}\textit{  describe current in a node and voltage around a loop. These two laws are the foundation of advanced circuit analysis }\\
+     \indent \textbullet\hspace{0.3cm} Link1: \url{https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws}\\
+    \indent \textbullet\hspace{0.3cm} Link2: \url{https://www.youtube.com/watch?v=a2tmHmIQ3hw}\\\\
+     \noindent\textbf{6. Ý NGHĨA TỪNG CÂU TRONG BÀI BÁO: }\\
+ \indent \textit{   Ghi chú này mô tả kỹ thuật sắp xếp tương tự như thuật toán "Quicksort" nổi tiếng , nhưng nó mang tính đơn hướng và không dùng đệ quy. Cách tiếp cận mới, giả định rằng các key được sắp xếp là các số dương, dẫn đến chương trình ngắn hơn nhiều.} 
+     
+     
+     Hoare's "Quicksort" trong nhiều năm đã là phương pháp được lựa chọn cho mục đích  sắp xếp, vì vòng lặp bên trong nhanh  nên thời gian chạy trung bình hiệu quả trên hầu hết các máy. Cho một mảng có $ N $ records $ R_1... R_N $, trong đó các records bao gồm các key $ K_1... K_N $, chúng ta muốn sắp xếp lại sao cho các key theo thứ tự tăng dần. Ý tưởng chính của Quicksort là chọn một record "pivot" $ R $ và sắp xếp lại các record để $ R $ di chuyển đến đích chính xác của nó là $ R_i $; sau đó quy trình tương tự được áp dụng đệ quy cho các mảng con $ R_1... R_{i-1} $ và $  R{i+1} ... R_{N} $. \\
+     \indent Nếu tất cả các khóa $ K_j $ đều dương, chúng ta có thể cho key của  record cuối cùng mang giá trị âm. Ngoài ra, còn có một cách để thực hiện thao tác xoay vòng cơ bản với các con trỏ  từ trái sang phải trong mảng, thay vì "burning the candle at both ends" như trong phương pháp Quicksort cổ điển. Sự kết hợp của hai ý tưởng này dẫn đến một thuật toán không ngăn xếp  (stackless algorithm) đơn giản đáng ngạc nhiên chỉ chạy chậm hơn khoảng 60\% so với các triển khai nhanh nhất của Quicksort. \\
+     
+      \noindent\textbf{7. Ý NGHĨA TỪNG ĐOẠN TRONG BÀI BÁO: }\\
+       \textbullet \hspace{0.5cm} \textbf{Ý nghĩa đoạn 1: } Giới thiệu một thuật toán sắp xếp tương tự nhưng thuật toán "Quicksort" mà chúng ta đã biết trước đó, nhưng nó không dùng đệ quy nên làm cho chương trình ngắn hơn.\\
+          \textbullet \hspace{0.5cm} \textbf{Ý nghĩa đoạn 2: } Mô tả cách hoạt động của thuật toán \textit{Hoare's "Quicksort"} là một thuật toán sắp xếp đã được dùng từ nhiều năm trước. Thuật toán dùng mảng các records $ R_1...R_N $, mảng cái \textit{key} $ K_1...K_N $ và phần tử \textbf{"pivot"} để thực hiện sắp xếp.\\
+            \textbullet \hspace{0.5cm} \textbf{Ý nghĩa đoạn 3: } Sử dụng một key ở vị trí cuối cùng là số âm thì thuật toán sẽ tối ưu hơn. Sự kết hợp đó sẽ tạo thành một thuật toán sắp xếp mới hoạt động tối ưu hơn so với các thuật toán Quicksort cổ điển.\\
+                 \textbullet \hspace{0.5cm} \textbf{Ý nghĩa đoạn 4: } Mô tả và giải thích các bước để thực hiện thuật toán sắp xếp mới \textit{"Stackless Quicksort}".\\
+                    \textbullet \hspace{0.5cm} \textbf{Ý nghĩa đoạn 5:} Nêu các bước cụ thể để thực hiện thuật toán và code chạy chương trình.\\
+                        \textbullet \hspace{0.5cm} \textbf{Ý nghĩa đoạn 6:} Dùng định luật Kirchhoff để tính độ phức tạp $ O $ của thuật toán mới. Ta thấy được nó tối ưu và hoạt động tốt hơn so với thuật toán Quicksort ban đầu.\\
+                        \newpage
+      \noindent\textbf{8. PHÂN TÍCH CHI TIẾT CÔNG THỨC }   \\
+    \textbf{  *Xác định công thức tính thời gian chạy - độ phức tạp của thuật toán: } \\
+         \textbullet \hspace{0.3cm} Sử dụng định luật Kirchhoff và vì có đúng một key là số âm ta có thể dễ dàng tính được thời gian chạy chương trình sẽ là: $ 4C+11X+19N+2 $.\\
+         Trong đó:\\  
+       \indent + $ C $   là số lần so sánh.\\
+         \indent+ $ X $ là số bước sắp xếp lại.\\
+       \textbullet \hspace{0.3cm} Giá trị trung bình $ C_N $ và $ X_N $ của $ C $ và $ X $ thõa mãn:
+      \begin{center}
+      	  $C_{ N}= \dfrac{ 1}{N } \displaystyle\sum\limits_{1 \le i \le N}{ \left(  N+C _{i-1 } +C _{N-i }   \right) }  $,\\
+         $X_{ N}= \dfrac{ 1}{N } \displaystyle\sum\limits_{1 \le i \le N}{ \left(  i-1+X _{i-1 } +X _{N-i }   \right) }  $
+      \end{center}  
+     \textbullet \hspace{0.3cm} Khi $ N>0 $; $ C_0=X_0=0 $. Nên: \begin{center}
+     	$ C_N=2(N+1)H_N-3N $; \hspace{0.5cm} $ X_N=(N+1)H_N-2N. $
+     \end{center}
+     \textbullet \hspace{0.3cm} Do đó thời gian trung bình chạy chương trình là
+    \begin{center}
+    	 $ 19(N+1)H_N-15N+2 \approx 19N \ln{N}-4.033N+O( \log{N} ). $
+    \end{center}
+       
+     \textbf{\begin{center}
+     		     ---------------HẾT---------------
+     \end{center}}
+\end{document}
